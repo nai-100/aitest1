@@ -16,7 +16,7 @@ jobs:
         with:
           switches: -avzr --delete --exclude-from='.rsync-exclude'
           path: ./
-          remote_path: ~/yaminabe.site/public_html/test1.yaminabe.site/
+          remote_path: ~/yaminabe.site/public_html/aitest1.yaminabe.site/
           remote_host: ${{ secrets.SSH_HOST }}
           remote_port: ${{ secrets.SSH_PORT }}
           remote_user: ${{ secrets.SSH_USERNAME }}
