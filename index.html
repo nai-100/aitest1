@@ -1,0 +1,972 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title></title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho&display=swap" rel="stylesheet">
+    <style>
+
+body {
+    font-family: "Shippori Mincho", serif;
+    margin: 0;
+}
+
+header {
+    background-color: rgba(256, 256, 256, 1);
+    color: black;
+    height: 90px;
+    z-index: 0;
+    top: 0;
+    width: 100%;
+}
+header .header-container {
+    width: 100vw;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+}
+header .header-left {
+    float: left;
+    padding: 20px 40px;
+    font-size: x-large;
+}
+header .header-right {
+    display: flex;
+    justify-content: end;
+    padding: 20px 40px;
+}
+header .header-right a {
+    margin: 0 5%;
+    font-size: x-large;
+    text-decoration: none;
+    color: black;
+}
+.contents {
+    width:100vw;
+}
+
+.FV {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    height: 500px;
+    overflow: hidden;
+}
+.FV_text {
+    font-size: 30px;
+    z-index: 5;
+    float: left;
+    position: absolute;
+    width: 85vw;
+    height: 500px;
+    padding: 0 7.5%;
+    color: white;
+    overflow: hidden;
+    mix-blend-mode: difference;
+}
+.FV_space {
+    background: white;
+    z-index: 10;
+    overflow: hidden;
+}
+.FV_text p {
+    white-space: nowrap;
+}
+p.FV_engtext {
+    font-size: 40px;
+    margin-top: 5%;
+    overflow: hidden;
+    color: white;
+}
+p.FV_japtext {
+    font-size: 18px;
+}
+.FV_text .left {
+    padding: 4% 22%;
+    font-size: 35px;
+    color: white;
+}
+.FV_imgpart {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    background-color: RGBA(0,0,0,1);
+    mix-blend-mode: difference;
+}
+.FV_imgpart img {
+    height: 100%;
+    object-fit: cover;
+    width: 100%;
+}
+
+.ABOUT {
+    display: grid;
+    height: fit-content;
+    justify-content: center;
+    gap: 7.5%;
+    margin: 5% 0;
+    width: 55%;
+    grid-template-columns: 2fr 4fr;
+    padding: 0 20% 0 25%;
+}
+p.ABOUT_company {
+    font-size: xx-large;
+    margin: 0%;
+}
+.ABOUT_right p {
+    margin: 5% 0;
+    font-size: 20px;
+}
+
+.break-visual {
+    position: relative;
+    height: 400px;
+    overflow: hidden;
+}
+.break-visual img {
+    object-fit: cover;
+    top: -118%;
+    position: absolute;
+    width: 100%;
+}
+
+.BUSINESS {
+    background: #162338;
+    color: white;
+    padding: 5% 10% 5% 10%;
+}
+.BUSINESS>p {
+    text-align: center;
+}
+.BUSINESS .subtitle {
+    margin-bottom: 0;
+}
+.BUSINESS .title {
+    font-size: x-large;
+    margin-top: 0.5%;
+    margin-bottom: 5%;
+}
+.businesses {
+    display: grid;
+    justify-content: space-around;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 3%;
+}
+.businesses img {
+    aspect-ratio: 1/1.3;
+    height: max-content;
+    width: 100%;
+    object-fit: cover;
+}
+.businesses .img_content {
+    position: relative;
+    margin-bottom: 7.5%;
+}
+.businesses .img_content>div {
+    height: max-content;
+    position: absolute;
+    bottom: 5px;
+    width: 100%;
+    text-align: center;
+    padding: 3% 0;
+    background-color: RGB(0,0,0,0.5);
+    font-size: 22px;
+}
+.businesses  .busi_viewmore {
+    text-align: center;
+    margin: 7.5% 0;
+    margin-left: 40px;
+}
+.businesses  .busi_viewmore .arrow {
+    margin: 7.5px 7.5%;
+    display: inline-block;
+    background-color:white;
+}
+.businesses  .busi_viewmore .arrow::before,.businesses  .busi_viewmore .arrow::after {
+    background-color:white;
+}
+
+.break-visual-2 {
+    display: flex;
+    background-color: #162338;
+    padding-bottom: 5%;
+}
+.break-visual-2>div {
+    width: 20%;
+    aspect-ratio: 1/1.3;
+}
+.break-visual-2>div:nth-child(odd) {
+    margin-bottom: 40px;
+}
+.break-visual-2>div:nth-child(even) {
+    margin-top: 40px;
+}
+.break-visual-2 .img-1 {
+    background-image: URL("https://sanuki-kukan.jp/img/about-img.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.break-visual-2 .img-2 {
+    background-image: URL("https://sanuki-kukan.jp/img/produced-img1.jpg");
+    background-repeat: no-repeat;
+    background-position: 37% 100%;
+    background-size: auto 117%;
+}
+.break-visual-2 .img-3 {
+    background-image: URL("https://sanuki-kukan.jp/wp/wp-content/uploads/2021/07/icatch8.jpg");
+    background-repeat: no-repeat;
+    background-size: auto 100%;
+    background-position: 35% 0%;
+}
+.break-visual-2 .img-4 {
+    background-image: URL("https://sanuki-kukan.jp/wp/wp-content/uploads/2021/07/icatch2.jpg");
+    background-repeat: no-repeat;
+    background-size: auto 100%;
+    background-position: 64% 0%;
+}
+.break-visual-2 .img-5 {
+    background-image: URL("https://sanuki-kukan.jp/wp/wp-content/uploads/2021/07/icatch12.jpg");
+    background-repeat: no-repeat;
+    background-size: auto 100%;
+    background-position: 17% 0%;
+}
+
+.NEWS {
+    display: grid;
+    height: 210px;
+    justify-content: center;
+    gap: 7.5%;
+    margin: 5% 0;
+    width: 60%;
+    grid-template-columns: 1fr 5fr;
+    padding: 0 20% 0 25%;
+}
+p.ABOUT_NEWS {
+    font-size: xx-large;
+    margin: 0%;
+}
+.NEWS_right .NEWS_info:first-of-type {
+    border-top: solid 1px;
+}
+.NEWS_right .NEWS_info {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    border-bottom: solid 1px;
+    padding: 2% 0px;
+    font-size: 18px;
+}
+.newslist_date {
+    padding: 0 20%;
+    font-size: 21px;
+}
+.NEWS_right .arrow {
+    margin: 16.5px 5.5%;
+    background-color: black;
+    float: right;
+    display: inline-block;
+}
+.NEWS_right .arrow::before, .NEWS_right .arrow::after {
+    background-color: black;
+    height: 1px;
+}
+
+.COMPANY {
+    display: grid;
+    height: fit-content;
+    justify-content: center;
+    gap: 7.5%;
+    margin: 5% 0;
+    width: 60%;
+    grid-template-columns: 1fr 5fr;
+    padding: 0 20% 0 25%;
+}
+p.ABOUT_company {
+    font-size: xx-large;
+    margin: 0%;
+}
+.COMPANY_right>.company_info:first-of-type {
+    border-top: solid 1px;
+}
+.COMPANY_right .company_info {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    border-bottom: solid 1px;
+    padding: 2% 0px;
+    font-size: 21px;
+}
+.company_listitem {
+    padding: 0 20%;
+    font-size: 21px;
+}
+
+.timeline {
+    width: 75%;
+    padding: 40px 25%;
+    background-color: white;
+    text-align: center;
+    overflow: hidden;
+}
+.timeline-container {
+    width: 100%;
+    margin: 0;
+    overflow-x: auto;
+    cursor: grab;
+    white-space: nowrap;
+}
+.timeline-slider {
+    display: flex;
+    padding: 20px;
+    width: max-content;
+}
+.timeline-slider .slick-list {
+    width: 185vw;
+}
+.timeline-slider .slick-list .slick-track {
+    display: flex;
+    gap: 1vw;
+}
+.timeline-card {
+    background-color: #1a2a46;
+    color: white;
+    padding: 20px;
+    border-radius: 5px;
+    text-align: left;
+    flex-shrink: 0;
+    width: 17vw;
+    aspect-ratio: 2.5 / 1.5;
+}
+.timeline-card ul {
+    padding-left: 5%;
+}
+.timeline-card li{
+    list-style:none;
+    display: flex;
+}
+.timeline-card div{
+    margin: 0 1%;
+}
+.timeline-container::-webkit-scrollbar {
+  display: none;
+}
+.timeline-bar {
+  width: 60%;
+  height: 5px;
+  background-color: #ccc;
+  margin: 20px auto 0;
+  position: relative;
+}
+.timeline-progress {
+  width: 10%;
+  height: 5px;
+  background-color: #1a2a46;
+  transition: width 0.5s ease;
+}
+
+.timeline-slider button {
+    display: none!important;
+}
+
+
+.CONTACT {
+    background-image: url(https://sanuki-kukan.jp/wp/wp-content/uploads/2021/07/no06-img5.png );
+    background-size: cover;
+    background-position-y: 38%;
+    color: white;
+}
+.CONTACT_back {
+    padding: 7.5% 25%;
+    text-align: center;
+    background-color: rgba(0,0,0,0.4);
+}
+.CONTACT>p {
+    text-align: center;
+}
+.CONTACT .subtitle {
+    margin-bottom: 0;
+}
+.CONTACT .title {
+    font-size: x-large;
+    margin-top: 0.5%;
+    margin-bottom: 5%;
+}
+.means {
+    display: grid;
+    justify-content: space-around;
+    grid-template-columns: 1fr 1fr;
+    gap: 5%;
+}
+.means>div {
+    aspect-ratio: 1 / 0.8;
+    background-color: white;
+}
+.mean_way {
+    position: relative;
+    display: grid;
+    grid-template-rows: 1fr 3.5fr 2fr 2fr;
+    height: 100%;
+    color: #1a2a46;
+}
+.mean {
+    width: 35%;
+    white-space: nowrap;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin: 4%;
+    transform: rotate(90deg) translate3d(35%, 210%, 10px);
+    font-size: 18px;
+}
+.mean>div {
+    margin: 0 19%;
+}
+.mean hr {
+    display: inline-block;
+    width: 100%;
+    height: 1px;
+    background-color: black;
+    border: black;
+}
+span.mean_waytest {
+    line-height: 1;
+}
+.mean_SVG {
+    text-align: center;
+}
+.mean_SVG svg {
+    width: 27.5%;
+    aspect-ratio: 1 /1;
+}
+.mean_text {
+    text-align: center;
+}
+.contact_meanstext {
+    font-size: 22px;
+    letter-spacing: 5px;
+}
+.telephone_number {
+    font-size: 32px;
+    font-weight: 500;
+    letter-spacing: 3px;
+    margin: 2% 0 1% 0;
+}
+.mail_sendlink {
+    background-color: #1a2a46;
+    color: white;
+    font-size: 22px;
+    letter-spacing: 4px;
+    line-height: 1.5;
+    margin: 2% 25%;
+    padding: 2%;
+}
+
+.SNS {
+    color: black;
+    padding: 7.5% 0;
+}
+.SNS>p {
+    text-align: center;
+}
+.SNS .subtitle {
+    margin-bottom: 0;
+}
+.SNS .title {
+    font-size: x-large;
+    margin-top: 0.5%;
+    margin-bottom: 3%;
+}
+.INSTAGRAM_Postlist {
+    width: fit-content;
+}
+.INSTAGRAM_Postlist {
+  position: relative;
+}
+.INSTAGRAM_Postlist .slider {
+  display: flex;
+  gap: 10px;
+  transition: transform 0.5s ease-in-out;
+}
+.INSTAGRAM_Postlist .slider img {
+    width: 15vw;
+    height: auto;
+    transition: transform 0.3s ease-in-out;
+    aspect-ratio: 1 /1;
+    padding: 0 2.5vw;
+}
+.INSTAGRAM_Postlist .slick-list {
+    overflow: unset;
+    pointer-events: none;
+}
+.INSTAGRAM_Postlist .slick-list::after {
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0%;
+    pointer-events: none;
+    z-index:1;
+}
+.INSTAGRAM_Postlist .slider img:nth-child(even) {
+    position: relative;
+    padding-top: 40px;
+}
+.Postlist_slider button {
+    display: none!important;
+}
+.INSTAGRAM_followlink {
+    text-align: center;
+    margin: 3vw 0px 2vw;
+    font-size: 21px;
+}
+.followlinktext {
+    display: flex;
+    justify-content: center;
+    gap: 1%;
+}
+.followlinktext .arrow::after, .followlinktext .arrow::before, .followlinktext .arrow div {
+    background-color: black;
+    height:1px;
+}
+.followlinktext .arrow {
+    margin: auto 0;
+}
+.followtext {
+    padding: 0 0 0 40px;
+}
+.INSTAGRAM_followlink a {
+    text-decoration: none;
+}
+
+footer {
+    background-color: #162338;
+    color: white;
+    display: grid;
+    padding: 5% 15%;
+    justify-content: space-around;
+    grid-template-columns: 1fr 0.8fr;
+}
+.footer-left .COMPANYNAME {
+    font-size: 30px;
+}
+.footer-right {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+.footer-right ul {
+    margin: 3% 0 5% 2%;
+}
+.footer-right li {
+    list-style: "  -  ";
+    font-size: 16px;
+    margin: 3% 0;
+}
+.footer_text {
+    font-size: 22px;
+    margin: 3% 0 3%;
+}
+
+.arrow {
+    position: relative;
+    display: inline-block;
+    width: 40px;
+    height: 1px;
+    margin: 7.4px 0;
+    border-radius: 9999px;
+}
+.arrow::before, .arrow::after {
+    content: "";
+    position: absolute;
+    top: calc(50% - 0.5px);
+    right: 0;
+    width: 15px;
+    height: 1.5px;
+    border-radius: 9999px;
+    transform-origin: calc(100% - 0.5px) 50%;
+}
+.arrow::before {
+  transform: rotate(32deg);
+}
+.arrow::after {
+  transform: rotate(-32deg);
+}
+
+</style>
+</head>
+<body>
+    <header>
+      <div class="header-container">
+        <div class="header-left">AAAAAA BBBBB CCCCCC</div>
+        <div class="header-right" id="page-link">
+            <a href="#"><div>ABOUT</div></a>
+            <a href="#"><div>BUSINESS</div></a>
+            <a href="#"><div>COMPANY</div></a>
+            <a href="#"><div>INSTAGRAM</div></a>
+            <a href="#"><div>CONTACT</div></a>
+        </div>
+      </div>
+    </header>
+    <div class="contents">
+      <div class="FV">
+        <div class="FV_space">
+          <div class="FV_text">
+            <p class="FV_engtext">Designing spaces that enhance life,<br>connect people, <br>and grow with time.</p>
+            <p class="FV_japtext">空間をデザインし、人をつなぎ、時とともに育む。</p>
+          </div>
+        </div>
+        <div class="FV_imgpart">
+          <div><img src="https://sanuki-kukan.jp/img/contents-img2.png" alt=""></div>
+          <div><img src="https://sanuki-kukan.jp/wp/wp-content/uploads/2021/07/icatch13.jpg" alt=""></div>
+        </div>
+      </div>
+      <div class="ABOUT">
+        <div class="ABOUT_left">
+          <p class="content_title">ABOUT</p>
+          <p class="ABOUT_company">AAAAAAAAAA</p>
+        </div>
+        <div class="ABOUT_right">
+          <p></p>
+          <p>人や商品を生かす。引き立て役を担う「空間」。</p>
+          <p>人々が集うことで完成する「空間」。</p>
+          <p>時間を積み重ねる事で、より育まれていく「空間」。</p>
+          <p>そんな本質を伴う「空間」を住う事、集う事、デザインし、</p>
+          <p>繋げる事への手段を提案します。</p>
+        </div>
+
+      </div>
+      <div class="break-visual">
+        <img src="https://sanuki-kukan.jp/wp/wp-content/uploads/2021/07/icatch7.jpg" alt="break-visual">
+      </div>
+      <div class="BUSINESS">
+        <p class="subtitle">BUSINESS</p>
+        <p class="title">事業内容</p>
+        <div class="businesses">
+          <div class="livingspace">
+            <div class="img_content">
+            <div>住空間構築</div>
+            <img src="https://sanuki-kukan.jp/img/contents-img1.png" alt="">
+            </div>
+            <div>
+              <p>テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
+            </div>
+            <div class="busi_viewmore">
+              <p>VIEW MORE<span class="arrow"></span></p>
+            </div>
+          </div>
+          <div class="commercialspace">
+            <div class="img_content">
+              <div>商空間 設計・デザイン</div>
+              <img src="https://sanuki-kukan.jp/wp/wp-content/uploads/2021/07/icatch6.jpg" alt="">
+            </div>
+            <div>
+              <p>テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
+            </div>
+            <div class="busi_viewmore">
+              <p>VIEW MORE<span class="arrow"></span></p>
+            </div>
+          </div>
+          <div class="FoodandBeverageProduction">
+            <div class="img_content">
+              <div>飲食プロデュース事業</div>
+              <img src="https://sanuki-kukan.jp/img/contents-img3.png" alt="">
+            </div>
+              <p>テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
+          <div class="busi_viewmore">
+              <p>VIEW MORE<span class="arrow"></span></p>
+            </div>
+          </div>
+          </div>
+      </div>
+      <div class="break-visual-2">
+            <div class="img-1">
+            </div>
+            <div class="img-2">
+            </div>
+            <div class="img-3">
+            </div>
+            <div class="img-4">
+            </div>
+            <div class="img-5">
+            </div>
+      </div>
+      <div class="NEWS">
+        <div class="NEWS_left">
+          <p class="content_title">NEWS</p>
+          <p class="ABOUT_NEWS">お知らせ</p>
+        </div>
+        <div class="NEWS_right">
+          <div class="NEWS_info"><div class="newslist_date">2025.00.00</div> <div class="newslist_title">コーポレートサイトをリニューアルいたしました<span class="arrow"></span></div></div>
+          <div class="NEWS_info"><div class="newslist_date">2025.00.00</div> <div class="newslist_title">テキストテキストテキストテキストテキストテキスト<span class="arrow"></span></div></div>
+          <div class="NEWS_info"><div class="newslist_date">2025.00.00</div> <div class="newslist_title">テキストテキストテキストテキストテキストテキスト<span class="arrow"></span></div></div>
+        </div>
+      </div>
+      <div class="COMPANY">
+        <div class="COMPANY_left">
+          <p class="content_title">会社名</p>
+          <p class="ABOUT_company">会社概要</p>
+        </div>
+        <div class="COMPANY_right">
+          <div class="company_info"><div class="company_listitem">COMPANY</div> <div class="company_listdetail">テキストテキスト<span class="arrow"></span></div></div>
+          <div class="company_info"><div class="company_listitem">所在地</div> <div class="company_listdetail">〒000-0000 〇〇県〇〇市〇〇〇町000<span class="arrow"></span></div></div>
+          <div class="company_info"><div class="company_listitem">電話番号</div> <div class="company_listdetail">0000-00-00000<span class="arrow"></span></div></div>
+          <div class="company_info"><div class="company_listitem">代表者</div> <div class="company_listdetail">〇〇 〇〇<span class="arrow"></span></div></div>
+          <div class="company_info"><div class="company_listitem">事業内容</div> <div class="company_listdetail">空間設計・空間デザイン・飲食プロデュース<span class="arrow"></span></div></div>
+        </div>
+      </div>  
+      <div class="timeline">
+        <div class="timeline-container">
+          <div class="timeline-slider">
+            <div class="timeline-card">
+              <h3>1972年</h3>
+              <ul>
+               <li><div>○月</div><div>テキストテキストテキスト<br>テキストテキストテキスト</div></li>
+              </ul>
+            </div>
+            <div class="timeline-card">
+              <h3>1972年</h3>
+              <ul>
+               <li><div>○月</div><div>テキストテキストテキストテキストテキストテキスト</div></li>
+              </ul>
+            </div>
+            <div class="timeline-card">
+              <h3>1972年</h3>
+              <ul>
+               <li><div>○月</div><div>テキストテキストテキストテキストテキストテキスト</div></li>
+              </ul>
+            </div>
+            <div class="timeline-card">
+              <h3>1972年</h3>
+              <ul>
+               <li><div>○月</div><div>テキストテキストテキストテキストテキストテキスト</div></li>
+              </ul>
+            </div>
+            <div class="timeline-card">
+              <h3>1972年</h3>
+              <ul>
+               <li><div>○月</div><div>テキストテキストテキストテキストテキストテキスト</div></li>
+              </ul>
+            </div>
+            <div class="timeline-card">
+              <h3>1972年</h3>
+              <ul>
+               <li><div>○月</div><div>テキストテキストテキストテキストテキストテキスト</div></li>
+              </ul>
+            </div>
+            <div class="timeline-card">
+              <h3>1972年</h3>
+              <ul>
+               <li><div>○月</div><div>テキストテキストテキストテキストテキストテキスト</div></li>
+              </ul>
+            </div>
+            <div class="timeline-card">
+              <h3>1972年</h3>
+              <ul>
+               <li><div>○月</div><div>テキストテキストテキストテキストテキストテキスト</div></li>
+              </ul>
+            </div>
+            <div class="timeline-card">
+              <h3>1972年</h3>
+              <ul>
+               <li><div>○月</div><div>テキストテキストテキストテキストテキストテキスト</div></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+  <div class="timeline-bar">
+    <div class="timeline-progress"></div>
+  </div>
+      </div>
+      <div class="CONTACT">
+        <div class="CONTACT_back">
+        
+        <p class="subtitle">CONTACT</p><p class="title">お問い合わせ</p>
+        <div class="means">
+          <div class="call">
+            <div class="mean_way">
+              <div class="mean"><div><hr></div><span class="mean_waytest">CALL</span></div>
+              <div class="mean_SVG">
+                <svg viewBox="0 0 800 800" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:1;">
+                  <g transform="matrix(1,0,0,1,-235,-3091)">
+                  <g transform="matrix(2.02015,0,0,2.02017,-55.2615,2534.8)">
+                  <rect x="142.327" y="275.741" width="396.011" height="396.011" style="fill:none;"></rect>
+                  <g transform="matrix(0.350027,0.350023,-0.350027,0.350023,570.786,-159.774)">
+                  <path d="M575.776,1304.46C613.52,1304.46 645.426,1300.62 681.11,1288.32C726.664,1272.62 699.776,1225.32 713.11,1203.63C726.443,1181.95 822.92,1151.72 851.776,1156.99C895.61,1164.99 926.11,1259.49 885.11,1287.32C859.029,1305.03 741.052,1356.15 577.7,1356.55L575.776,1356.56L573.853,1356.55C410.501,1356.15 292.524,1305.03 266.443,1287.32C225.443,1259.49 255.943,1164.99 299.777,1156.99C328.633,1151.72 425.11,1181.95 438.443,1203.63C451.777,1225.32 424.889,1272.62 470.443,1288.32C506.127,1300.62 538.033,1304.46 575.776,1304.46Z" style="fill:none;stroke:black;stroke-width:22.22px;"></path>
+                  </g>
+                  </g>
+                  </g>
+                </svg>
+              </div>
+              <div class="mean_text">
+                <div class="contact_meanstext">電話でのお問い合わせ</div>
+                <div class="telephone_number">0000-00-0000</div>
+              </div>
+            </div>
+          </div>
+          <div class="mail">
+            <div class="mean_way">
+              <div class="mean"><div><hr></div><span class="mean_waytest">MAIL</span></div>
+              <div class="mean_SVG">
+                <svg viewBox="0 0 144 144" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;"><rect x="0.129" y="0.01" width="144" height="144.002" style="fill:none;"></rect><path d="M116.629,43.508c0,-2.209 -1.79,-4 -4,-4l-81,-0c-2.209,-0 -4,1.791 -4,4l0,57.005c0,2.209 1.791,4 4,4l81,0c2.21,0 4,-1.791 4,-4l0,-57.005Zm-4,-0l-81,-0l0,57.005l81,0l0,-57.005Z"></path><path d="M69.411,83.961c1.534,1.421 3.903,1.421 5.437,0l40.5,-37.519c1.207,-1.118 1.606,-2.862 1.005,-4.394c-0.6,-1.532 -2.078,-2.54 -3.724,-2.54l-81,-0c-1.645,-0 -3.123,1.008 -3.724,2.54c-0.6,1.532 -0.201,3.276 1.006,4.394l40.5,37.519Zm2.718,-2.934l40.5,-37.519l-81,-0l40.5,37.519Z"></path></svg>
+              </div>
+              <div class="mean_text">
+                <div class="contact_meanstext">メールでのお問い合わせ</div>
+                
+              <div class="mail_sendlink">HERE</div></div>
+            </div>
+          </div>
+        </div>
+</div>
+      </div>
+      <div class="SNS INSTAGRAM">
+        <p class="subtitle">SNS</p>
+        <p class="title">INSTAGRAM</p>
+        <div class="INSTAGRAM_Postlist">
+          <div class="Postlist_slider slider">
+            <img src="https://sanuki-kukan.jp/wp/wp-content/uploads/2021/11/usagi1-scaled.jpeg" alt="image1">
+            <img src="https://sanuki-kukan.jp/wp/wp-content/uploads/2021/07/S__9019433.jpg" alt="image2">
+            <img src="https://sanuki-kukan.jp/wp/wp-content/uploads/2021/07/no09-img5.png" alt="image3">
+            <img src="https://sanuki-kukan.jp/wp/wp-content/uploads/2021/07/no13-img03.png" alt="image4">
+            <img src="https://sanuki-kukan.jp/wp/wp-content/uploads/2021/07/no03-img2.png" alt="image5">
+            <img src="https://sanuki-kukan.jp/wp/wp-content/uploads/2021/07/o85e8142a2970eb86530ca5ddc226901c_65993854_210713_1.jpg" alt="image6">
+            <img src="https://sanuki-kukan.jp/wp/wp-content/uploads/2021/07/o85e8142a2970eb86530ca5ddc226901c_65993660_210713_0.jpg" alt="image6">
+            <img src="https://sanuki-kukan.jp/wp/wp-content/uploads/2021/07/img5.png" alt="image6">
+          </div>
+        </div>
+        <div class="INSTAGRAM_followlink">
+            <div class="followlinktext">
+              <div class="followtext">FOLLOW</div>
+              <div class="arrow">
+                <div></div>
+              </div>
+            </div>
+        </div>
+      </div>
+    <footer>
+        <div class="footer-left">
+          <div class="COMPANYNAME">SANUKI KUKAN DESIGN</div>
+          <div class="philosophy">
+            <p>Designing spaces that enhance life,
+            <br>connect people, and grow with time.</p>
+            <p>空間をデザインし、人をつなぎ、時とともに育む。</p></div>
+        </div>
+        <div class="footer-right">
+          <div class="footer_text">HOME</div>
+          <div class="footer_text">INSTAGRAM</div>
+          <div class="footer_text">ABOUT</div>
+          <div class="footer_text">CONTACT</div>
+          <div class="footer_text">
+            <div>BUSINESS</div>
+              <ul>
+                <li>住空間構築</li>
+                <li>小空間設計・デザイン</li>
+                <li>飲食プロデュース事業</li>
+              </ul>
+            </div>
+          <div class="footer_text">SITEMAP</div>
+        </div>
+    </footer>
+
+<!-- jQuery -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<!-- Slick JS -->
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel/slick/slick.min.js"></script>
+<!-- Slick CSS -->
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel/slick/slick.css"/>
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel/slick/slick-theme.css"/>
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  
+  // Postリストの自動スライダー (Slick)
+  $('.Postlist_slider').slick({
+    autoplay: true,
+    autoplaySpeed: 0,
+    speed: 3000,
+    cssEase: 'linear',
+    infinite: true,
+    slidesToShow: 4,
+    slidesToScroll: 1,
+    variableWidth: true,
+    centerMode: false,
+    draggable: false
+  });
+});
+
+$(document).ready(function() {
+    $('.timeline-slider').slick({
+        autoplay: false,
+        speed: 500,
+        cssEase: 'linear',
+        infinite: false,
+        slidesToShow: 4,
+        variableWidth: true,
+        centerMode: false,
+        draggable: false
+    });
+
+    // Slickのスライド切り替え時に進捗バーを移動するように変更
+    $('.timeline-slider').on('afterChange', function() {
+        const scrollPosition = $('.slick-list').scrollLeft();
+        const maxScroll = $('.slick-list')[0].scrollWidth - $('.slick-list')[0].clientWidth;
+
+        const progress = (scrollPosition / maxScroll) * 90; // 右端の調整 (幅が10%なので90%)
+        $('.timeline-progress').css('transform', `translateX(${progress}%)`);
+    });
+
+    // `.timeline-container` のドラッグスクロール対応
+    const slider = document.querySelector('.timeline-container');
+    if (slider) {
+        let isDown = false;
+        let startX;
+        let scrollLeft;
+
+        slider.addEventListener('mousedown', (e) => {
+            isDown = true;
+            slider.classList.add('active');
+            startX = e.pageX - slider.offsetLeft;
+            scrollLeft = slider.scrollLeft;
+        });
+
+        slider.addEventListener('mouseleave', () => {
+            isDown = false;
+            slider.classList.remove('active');
+        });
+
+        slider.addEventListener('mouseup', () => {
+            isDown = false;
+            slider.classList.remove('active');
+        });
+
+        slider.addEventListener('mousemove', (e) => {
+            if (!isDown) return;
+            e.preventDefault();
+            const x = e.pageX - slider.offsetLeft;
+            const walk = (x - startX) * 1.5; // ドラッグ感度調整
+            slider.scrollLeft = scrollLeft - walk;
+
+            // 進捗バーの更新 (幅10%で移動するタイプ)
+            const scrollPosition = slider.scrollLeft;
+            const maxScroll = slider.scrollWidth - slider.clientWidth;
+            const progress = (scrollPosition / maxScroll) * 900; // 右端の調整 (幅が10%なので90%)
+            $('.timeline-progress').css('transform', `translateX(${progress}%)`);
+        });
+    }
+});
+
+$('#page-link a').click(function () {
+    var targetClass = $(this).find('div').text().trim().toUpperCase(); // リンク内の <div> テキスト取得
+    var targetDiv = $('.' + targetClass); // クラス名として要素を取得
+
+    if (targetDiv.length) {
+        var pos = targetDiv.offset().top;
+        $('body,html').animate({scrollTop: pos}, 500);
+    }
+
+    return false;
+});
+
+
+</script>
+
+
+</body>
+</html>

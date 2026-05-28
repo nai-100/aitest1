@@ -1,0 +1,9 @@
+.git
+.github
+.gitignore
+.rsync-exclude
+README.md
+wp-config.php
+wp-content/uploads/
+node_modules/
+.DS_Store
